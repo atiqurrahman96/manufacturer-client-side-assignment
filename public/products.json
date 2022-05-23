@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "1",
+        "image": "https://i.ibb.co/WpTYps6/image1.jpg",
+        "name": "Hammers",
+        "price": 2,
+        "quantity": 500,
+        "about": "This is another good product in my company .These hammers are very strong and sustainable also. My company gives you 1 year warranty in these products. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 100 pieces.\r\n"
+    },
+    {
+        "_id": "2",
+        "image": "https://i.ibb.co/vdbbDk2/image2.jpg",
+        "name": "Measurement Tapes",
+        "price": 2,
+        "quantity": 600,
+        "about": "These are very strong electric tool. you can choose it without any hesitation. This tool you can use very easily .If you see any problem in this tools , my company will return your money. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 100 pieces.\r\n"
+    },
+    {
+        "_id": "3",
+        "image": "https://i.ibb.co/s3csDK0/image3.jpg",
+        "name": "Wire Cutters",
+        "price": 3,
+        "quantity": 700,
+        "about": "These products are very much standard products. These products are very strong and very sustainable.My company gives you 1 year warranty in these products. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 100 pieces.\r\n"
+    },
+    {
+        "_id": "4",
+        "image": "https://i.ibb.co/VgpbPwM/image4.jpg",
+        "name": "Screw Drivers",
+        "price": 2,
+        "quantity": 800,
+        "about": "This is another one products of my company whatever company manufactures.These  products are very strong and sustainable also. My company gives you 1 year warranty in these products. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 100 pieces.\r\n"
+    },
+    {
+        "_id": "5",
+        "image": "https://i.ibb.co/0K3zGpK/image5.jpg",
+        "name": "Drill Machines",
+        "price": 10,
+        "quantity": 900,
+        "about": "This is another good product in my company .These drill machines are very strong and sustainable also. My company gives you 1 year warranty in these products. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 50 pieces.\r\n"
+    },
+    {
+        "_id": "6",
+        "image": "https://i.ibb.co/R6KkGDM/image6.jpg",
+        "name": "Sockets",
+        "price": 6,
+        "quantity": 1000,
+        "about": "This is very strong electric tool. you can choose it without any hesitation. This tool you can use very easily .If you see any problem in this tools , my company will return your money. you can order from anywhere , if you want but as a wholesaler, we do not export or sell our product minimum 100 pieces.\r\n"
+    }
+]

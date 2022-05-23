@@ -1,12 +1,17 @@
 import React from 'react';
+import Banner from './Banner';
+import BusinessSummary from './BusinessSummary';
+import Parts from './Parts';
+
 
 
 const Home = () => {
 
     return (
         <div>
-            <h1 className='text-2xl text-red-500'>This is home</h1>
-            <button className='btn btn-success text-primary'>hi</button>
+            <Banner></Banner>
+            <Parts></Parts>
+            <BusinessSummary></BusinessSummary>
         </div>
     );
 };

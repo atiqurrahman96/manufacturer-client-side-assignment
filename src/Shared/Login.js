@@ -18,7 +18,7 @@ const Login = () => {
                 <div class="card-body">
                     <h2 class="text-2xl font-bold text-center">Log In</h2>
                     <div class="divider">OR</div>
-                    <button class="btn text-white"><FaGoogle size="2rem" style={{ margin: '5px' }} />Continue with Google</button>
+                    <button onClick={() => signInWithGoogle()} class="btn text-white"><FaGoogle size="2rem" style={{ margin: '5px' }} />Continue with Google</button>
 
                 </div>
             </div>

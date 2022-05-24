@@ -19,8 +19,10 @@ const Footer = () => {
             </div>
 
             <FooterContainer />
-            <p className='text-center'>Copyright@{date}</p>
-            <FaFacebookSquare />
+            <div>
+                <p className='text-center mt-2'>Copyright@{date} all rights reserved</p>
+            </div>
+
         </footer>
     );
 };

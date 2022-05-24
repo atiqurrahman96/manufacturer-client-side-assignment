@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from './Loading';
 import { toast } from 'react-toastify';
@@ -17,12 +17,14 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const navigate = useNavigate();
     let signUpError;
     if (loading || googleLoading || updating) {
         return <Loading></Loading>
     }
     if (user || googleUser) {
         console.log('user got', user);
+        navigate('/home')
     }
 
     if (error || googleError || updateError) {

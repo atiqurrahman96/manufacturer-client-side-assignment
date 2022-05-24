@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from './Loading';
 
 const Signup = () => {
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -26,9 +27,12 @@ const Signup = () => {
     if (error || googleError) {
         signUpError = <p>{error?.message || googleError?.message}</p>
     }
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         console.log(data)
-        createUserWithEmailAndPassword(data.email, data.password)
+
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
+        alert('Updated profile');
 
     };
     return (
@@ -38,6 +42,26 @@ const Signup = () => {
                     <h2 class="text-4xl font-bold text-center text-accent">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+
+                            </label>
+                            <input
+                                type="text" placeholder="Enter Your name" class="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'name is required'
+                                    },
+
+                                })}
+                            />
+                            <label class="label">
+                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-600">{errors.name.message}</span>}
+
+
+
+                            </label>
                             <label class="label">
                                 <span class="label-text">Email</span>
 
@@ -84,7 +108,9 @@ const Signup = () => {
 
 
                             </label>
-                            <p>{signUpError}</p>
+
+
+                            <p className='text-red-600'>{signUpError}</p>
                         </div>
 
                         <input className='w-full mx-auto btn btn-sm text-white' type="submit" value='Sign Up' />

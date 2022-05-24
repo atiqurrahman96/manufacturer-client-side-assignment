@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Part = ({ part }) => {
     const { _id, image, name, price, quantity, about } = part;
+    const navigate = useNavigate();
+    const navigateToItemDetail = id => {
+        navigate(`/part/${id}`)
+    }
     return (
         <div>
             <div class="card w-96 bg-base-100 shadow-xl mb-5 ">
@@ -15,7 +21,9 @@ const Part = ({ part }) => {
                     <p className='text-center font-bold'>Available Quantity:{quantity}</p>
                     <small className='text-center font-bold'>Description:{about}</small>
                 </div>
-
+                <div className='flex justify-center'>
+                    <button onClick={() => navigateToItemDetail(_id)} class="btn btn-accent text-white">Purchase</button>
+                </div>
             </div>
 
         </div>

@@ -11,6 +11,9 @@ import Signup from './Shared/Signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PasswordReset from './Shared/PasswordReset';
+import PurchasePage from './PurchasePage/PurchasePage';
+import RequireAuth from './Shared/RequireAuth';
+
 
 
 
@@ -25,7 +28,8 @@ function App() {
         <Route path='/portfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
-        <Route path='resetpassword' element={<PasswordReset />}></Route>
+        <Route path='/resetpassword' element={<PasswordReset />}></Route>
+        <Route path='/part/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
 
 
         <Route path='*' element={<PageNotFound />}></Route>

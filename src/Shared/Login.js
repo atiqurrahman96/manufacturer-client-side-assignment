@@ -88,7 +88,7 @@ const Login = () => {
 
                         <input className='w-full mx-auto btn btn-sm text-white' type="submit" value='log in' />
                         <p className='text-secondary '>New to here?<Link className='m-2' to='/signup'>Create an account</Link></p>
-                        <p className='text-red-600'>Forget password?</p>
+                        <p className='text-red-600'>Forget password?<Link to='/resetpassword'>Reset Password</Link></p>
                     </form>
 
 

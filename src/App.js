@@ -10,6 +10,7 @@ import PageNotFound from './Shared/PageNotFound';
 import Signup from './Shared/Signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PasswordReset from './Shared/PasswordReset';
 
 
 
@@ -24,7 +25,7 @@ function App() {
         <Route path='/portfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
-
+        <Route path='resetpassword' element={<PasswordReset />}></Route>
 
 
         <Route path='*' element={<PageNotFound />}></Route>

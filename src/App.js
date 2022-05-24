@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home';
 import Login from './Shared/Login';
 import Navbar from './Shared/Navbar';
 import PageNotFound from './Shared/PageNotFound';
+import Signup from './Shared/Signup';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/portfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<Signup />}></Route>
 
 
 

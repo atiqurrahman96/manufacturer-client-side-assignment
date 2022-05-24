@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from './Loading';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -15,16 +16,16 @@ const Signup = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     let signUpError;
-    if (loading || googleLoading) {
+    if (loading || googleLoading || updating) {
         return <Loading></Loading>
     }
     if (user || googleUser) {
         console.log('user got', user);
     }
 
-    if (error || googleError) {
+    if (error || googleError || updateError) {
         signUpError = <p>{error?.message || googleError?.message}</p>
     }
     const onSubmit = async (data) => {
@@ -32,7 +33,7 @@ const Signup = () => {
 
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
-        alert('Updated profile');
+        toast('Updated profile');
 
     };
     return (

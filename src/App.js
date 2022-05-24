@@ -8,6 +8,8 @@ import Login from './Shared/Login';
 import Navbar from './Shared/Navbar';
 import PageNotFound from './Shared/PageNotFound';
 import Signup from './Shared/Signup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -27,6 +29,7 @@ function App() {
 
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

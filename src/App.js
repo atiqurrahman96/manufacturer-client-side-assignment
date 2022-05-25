@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PasswordReset from './Shared/PasswordReset';
 import PurchasePage from './PurchasePage/PurchasePage';
 import RequireAuth from './Shared/RequireAuth';
+import Dashboard from './Shared/Dashboard';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/resetpassword' element={<PasswordReset />}></Route>
         <Route path='/part/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
+        <Route path='/part/:id' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
 
 
         <Route path='*' element={<PageNotFound />}></Route>

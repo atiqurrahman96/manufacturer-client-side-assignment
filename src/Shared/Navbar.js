@@ -16,7 +16,9 @@ const Navbar = () => {
             <Link to='/blogs'>Blogs</Link>
             <Link to='/portfolio'>My Portfolio</Link>
             <Link to='/portfolio'>My Portfolio</Link>
-
+            {
+                user && <Link to='/dashboard'>Dashboard</Link>
+            }
             {user ?
                 <button onClick={logout} class="btn btn-sm">{user.displayName}</button> :
                 <Link to='/login'>Log In</Link>

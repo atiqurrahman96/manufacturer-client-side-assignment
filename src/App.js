@@ -17,7 +17,7 @@ import Dashboard from './Dashboard/Dashboard';
 import Myorders from './Dashboard/Myorders';
 import Reviews from './Dashboard/Reviews';
 import MyProfile from './Dashboard/MyProfile';
-
+import Users from './Dashboard/Users'
 
 
 
@@ -39,6 +39,7 @@ function App() {
           <Route index element={<Myorders></Myorders>}></Route>
           <Route path="reviews" element={<Reviews></Reviews>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="users" element={<Users></Users>}></Route>
         </Route>
 
 

@@ -15,6 +15,7 @@ const PlaceOrder = ({ purchase }) => {
             email: user.email,
             name: user.displayName,
             product: purchase.name,
+            quantity: event.target.quantity.value,
             phone: event.target.phone.value,
             address: event.target.address.value,
 
@@ -51,6 +52,7 @@ const PlaceOrder = ({ purchase }) => {
             <input type="text" name="name" disabled value={user?.displayName} className="input input-bordered input-primary w-full max-w-xs" />
             <input type="email" name='email' disabled value={user?.email} className="input input-bordered input-primary w-full max-w-xs" />
             <input type="text" name='product' disabled value={purchase.name} className="input input-bordered input-primary w-full max-w-xs" />
+            <input type="text" name='quantity' placeholder="enter your quantity" required className="input input-bordered input-primary w-full max-w-xs" />
             <input type="text" name='phone' placeholder="Your phone" required className="input input-bordered input-primary w-full max-w-xs" />
             <input type="text" name='address' placeholder="Your address" required className="input input-bordered input-primary w-full max-w-xs" />
             <input type="submit" value="Submit" className="btn btn-secondary   w-full max-w-xs" />

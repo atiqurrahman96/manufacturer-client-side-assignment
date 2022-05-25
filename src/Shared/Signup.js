@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from './Loading';
 import { toast } from 'react-toastify';
+import useToken from '../hooks/useToken';
 
 const Signup = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -17,12 +18,14 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    // using useToken hooks here
+    const [token] = useToken(user || googleUser);
     const navigate = useNavigate();
     let signUpError;
     if (loading || googleLoading || updating) {
         return <Loading></Loading>
     }
-    if (user || googleUser) {
+    if (token) {
         console.log('user got', user);
         navigate('/home')
     }

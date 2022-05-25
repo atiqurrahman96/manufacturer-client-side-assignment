@@ -24,7 +24,7 @@ const PurchasePage = () => {
                     <p>Per price:${purchase.price}</p>
                     <p>about:{purchase.about}</p>
 
-                    <PlaceOrder></PlaceOrder>
+                    <PlaceOrder purchase={purchase}></PlaceOrder>
                 </div>
             </div>
         </div>

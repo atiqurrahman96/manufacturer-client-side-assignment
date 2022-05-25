@@ -1,16 +1,20 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
-const PlaceOrder = () => {
+const PlaceOrder = ({ purchase }) => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     const handleBooking = (event) => {
         event.preventDefault();
         const booking = {
+
             email: user.email,
             name: user.displayName,
+            product: purchase.name,
             phone: event.target.phone.value,
             address: event.target.address.value,
 
@@ -26,12 +30,13 @@ const PlaceOrder = () => {
             .then(data => {
                 console.log(data)
                 if (data.success) {
-                    toast('data has added')
+                    toast.success('your order has successfully been placed')
                 }
                 else {
-                    toast('daata already added')
+                    toast.error('Order already exists')
                 }
                 event.target.reset()
+                navigate('/home')
             });
 
 
@@ -45,8 +50,9 @@ const PlaceOrder = () => {
 
             <input type="text" name="name" disabled value={user?.displayName} className="input input-bordered input-primary w-full max-w-xs" />
             <input type="email" name='email' disabled value={user?.email} className="input input-bordered input-primary w-full max-w-xs" />
-            <input type="text" name='phone' placeholder="Your phone" className="input input-bordered input-primary w-full max-w-xs" />
-            <input type="text" name='address' placeholder="Your address" className="input input-bordered input-primary w-full max-w-xs" />
+            <input type="text" name='product' disabled value={purchase.name} className="input input-bordered input-primary w-full max-w-xs" />
+            <input type="text" name='phone' placeholder="Your phone" required className="input input-bordered input-primary w-full max-w-xs" />
+            <input type="text" name='address' placeholder="Your address" required className="input input-bordered input-primary w-full max-w-xs" />
             <input type="submit" value="Submit" className="btn btn-secondary   w-full max-w-xs" />
 
         </form>

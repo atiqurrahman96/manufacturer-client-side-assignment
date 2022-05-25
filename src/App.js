@@ -13,7 +13,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import PasswordReset from './Shared/PasswordReset';
 import PurchasePage from './PurchasePage/PurchasePage';
 import RequireAuth from './Shared/RequireAuth';
-import Dashboard from './Shared/Dashboard';
+import Dashboard from './Dashboard/Dashboard';
+import Myorders from './Dashboard/Myorders';
+import Reviews from './Dashboard/Reviews';
+import MyProfile from './Dashboard/MyProfile';
+
 
 
 
@@ -31,7 +35,12 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/resetpassword' element={<PasswordReset />}></Route>
         <Route path='/part/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
-        <Route path='/part/:id' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+          <Route index element={<Myorders></Myorders>}></Route>
+          <Route path="reviews" element={<Reviews></Reviews>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
+
 
 
         <Route path='*' element={<PageNotFound />}></Route>

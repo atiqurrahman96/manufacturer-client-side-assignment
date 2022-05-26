@@ -31,6 +31,7 @@ const Navbar = () => {
     </>
     return (
         <div>
+
             <div className="navbar bg-accent  text-white">
                 <div className="navbar-start">
                     <div className="dropdown">

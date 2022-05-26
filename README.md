@@ -1,9 +1,12 @@
+# Electronic Tools Manufacturing
+# [Click Here to Visit my site]()
 
-
-
-# Getting Started with Create React App
-#Electronic Tools Manufacturing
-
+### whatever I have used so far in this project , some of them are given below by list:
+1.Create react app\
+2.React query \
+3.React hooks form \
+4.As database, I have used mongodb \
+5. At last I have deployed this project in firebase 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

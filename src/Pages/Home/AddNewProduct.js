@@ -5,7 +5,7 @@ const AddNewProduct = () => {
     const [AddNewProduct, setAddNewProduct] = useState([]);
     console.log('this is ', AddNewProduct);
     useEffect(() => {
-        fetch('https://ancient-sea-95326.herokuapp.com/single')
+        fetch('http://localhost:5000/singleProduct/singleProduct')
             .then(res => res.json())
             .then(data => setAddNewProduct(data))
     }, [])

@@ -15,7 +15,7 @@ const Parts = () => {
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5'>
                 {
-                    parts.map(part => <Part
+                    parts?.map(part => <Part
                         key={part._id}
                         part={part}
                     >

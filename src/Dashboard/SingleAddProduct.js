@@ -27,7 +27,7 @@ const SingleAddProduct = () => {
 
                     }
                     // send data to database
-                    fetch('http://localhost:5000/singleProduct', {
+                    fetch('https://ancient-sea-95326.herokuapp.com/singleProduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

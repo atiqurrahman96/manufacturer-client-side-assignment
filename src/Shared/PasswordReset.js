@@ -16,7 +16,7 @@ const PasswordReset = () => {
     }
     return (
         <form className='text-center py-5' onSubmit={resetPassword}>
-            <input class="input input-bordered" type="email" name="email" placeholder='enter your email' id="" />
+            <input className="input input-bordered" type="email" name="email" placeholder='enter your email' id="" />
             <br />
             <input className='btn m-2' type="submit" value="submit" />
 

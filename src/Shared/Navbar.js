@@ -21,7 +21,7 @@ const Navbar = () => {
                 user && <Link to='/dashboard'>Dashboard</Link>
             }
             {user ?
-                <button onClick={logout} class="btn btn-sm">{user.displayName}</button> :
+                <button onClick={logout} className="btn btn-sm">{user.displayName}</button> :
                 <Link to='/login'>Log In</Link>
 
             }

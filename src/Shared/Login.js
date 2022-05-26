@@ -44,17 +44,17 @@ const Login = () => {
     };
     return (
         <div className='flex h-screen justify-center items-center'>
-            <div class="card w-96 bg-base-300  shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-4xl font-bold text-center text-accent">Log In</h2>
+            <div className="card w-96 bg-base-300  shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-4xl font-bold text-center text-accent">Log In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
 
                             </label>
                             <input
-                                type="email" placeholder="Enter Your Email" class="input input-bordered w-full max-w-xs"
+                                type="email" placeholder="Enter Your Email" className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -66,18 +66,18 @@ const Login = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-600">{errors.email.message}</span>}
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
 
 
                             </label>
-                            <label class="label">
-                                <span class="label-text">password</span>
+                            <label className="label">
+                                <span className="label-text">password</span>
 
                             </label>
                             <input
-                                type="password" placeholder="Enter Your password" class="input input-bordered w-full max-w-xs"
+                                type="password" placeholder="Enter Your password" className="input input-bordered w-full max-w-xs"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -89,9 +89,9 @@ const Login = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-600">{errors.password.message}</span>}
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-600">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-600">{errors.password.message}</span>}
 
                                 <p className='text-red-600'>{signInError}</p>
                             </label>
@@ -106,8 +106,8 @@ const Login = () => {
 
 
 
-                    <div class="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} class="btn text-white"><FaGoogle size="2rem" style={{ margin: '5px' }} />Continue with Google</button>
+                    <div className="divider">OR</div>
+                    <button onClick={() => signInWithGoogle()} className="btn text-white"><FaGoogle size="2rem" style={{ margin: '5px' }} />Continue with Google</button>
 
                 </div>
             </div>

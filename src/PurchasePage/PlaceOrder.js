@@ -20,7 +20,7 @@ const PlaceOrder = ({ purchase }) => {
             address: event.target.address.value,
 
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://ancient-sea-95326.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

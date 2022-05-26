@@ -14,7 +14,7 @@ const Review = () => {
             textarea: event.target.textarea.value,
             rating: event.target.rating.value,
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://ancient-sea-95326.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

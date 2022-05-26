@@ -10,7 +10,7 @@ const Myorders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?email=${user.email}`, {
+            fetch(`https://ancient-sea-95326.herokuapp.com/booking?email=${user.email}`, {
                 method: 'Get',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,8 +33,8 @@ const Myorders = () => {
     return (
         <div>
             <h1 className='font-bold text-purple-600'>My Orders:{orders.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

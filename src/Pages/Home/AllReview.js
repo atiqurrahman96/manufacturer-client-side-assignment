@@ -6,7 +6,7 @@ const AllReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://ancient-sea-95326.herokuapp.com/reviews', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const AllReview = () => {
                 {
                     reviews.map(review => <SingleReview
                         review={review}
-
+                        key={review._id}
                     ></SingleReview>)
                 }
             </div>

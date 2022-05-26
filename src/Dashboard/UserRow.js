@@ -10,11 +10,17 @@ const UserRow = ({ user, index, refetch }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('failed to made an admin')
+                }
+                return res.json()
+            })
             .then(data => {
-                console.log(data);
-                refetch();
-                toast.success('successfully made an admin ')
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success('successfully made an admin')
+                }
             })
     }
 

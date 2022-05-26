@@ -4,7 +4,7 @@ import SingleReview from './SingleReview';
 
 const AllReview = () => {
     const [reviews, setReviews] = useState([]);
-    console.log(reviews);
+
     useEffect(() => {
         fetch('http://localhost:5000/reviews', {
             method: 'GET',

@@ -18,6 +18,7 @@ import Myorders from './Dashboard/Myorders';
 import Reviews from './Dashboard/Reviews';
 import MyProfile from './Dashboard/MyProfile';
 import Users from './Dashboard/Users'
+import AddProduct from './Dashboard/AddProduct';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="reviews" element={<Reviews></Reviews>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
+          <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
         </Route>
 
 
